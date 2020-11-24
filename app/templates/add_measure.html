@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container">
+  <h1 class="page-header">Add Measure</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-danger">
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
+  <form method="POST" action="{{ url_for('add_measure') }}">
+    {{ form.csrf_token }}
+    <div class="form-group">{{ form.temperature.label }} {{ form.temperature(size=20, class="form-control") }}</div>
+    <div class="form-group">{{ form.duration.label }} {{ form.duration(size=20, class="form-control") }}</div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock %}

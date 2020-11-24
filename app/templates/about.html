@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header">About</h1>
+<p class="lead">I found this interesting repository: https://github.com/uwi-info3180/flask-sqlite.
+The application, written in Python, uses Flask as a web framework and Sqlalchemy as a ORM for connecting to a SQLite-database.</p>
+<p class="lead">I wrote a python script, load_csv.py, for loading csv data to the database. I added two columns in the table, "uploaded_by", in order to record the type of submission (by csv file or web form), and "request_timestamp", for logging requests.
+In the "Add Measure" section, it is possible to insert temperature and duration fields only: the other fields, not supposed to be inserted manually, are automatically computed in the "views.py" script.
+For the "Get Measures" section, I added a function in "views.py" and two html templates; the request is logged in the "request_timestamp" field. Lastly, in the "Show Measures" section I inserted a table with the whole dataset.
+</p>
+{% endblock %}

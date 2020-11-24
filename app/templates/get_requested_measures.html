@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container">
+  <h1 class="page-header">Show Measures</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-success">
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
+    
+  <table style="width:100%">
+  <tr>
+    <th>id</th>
+    <th>timestamp</th>
+    <th>temperature</th>
+    <th>duration</th>
+    <th>uploaded_by</th>
+    <th>request_timestamp</th>
+  </tr>
+  {% for measure in measures %}
+   <tr>
+     <td>{{ measure.id }}</td>
+     <td> {{ measure.timestamp }}</td>
+     <td>{{ measure.temperature }}</td>
+     <td>{{ measure.duration }}</td>
+     <td>{{ measure.uploaded_by }}</td>
+     <td>{{ measure.request_timestamp }}</td> 
+   </tr>
+  {% endfor %}
+</table> 
+  
+</div>
+{% endblock %}
