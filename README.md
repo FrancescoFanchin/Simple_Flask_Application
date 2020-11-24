@@ -29,6 +29,7 @@ $ python load_csv.py
 
 
 ## About
+I found this interesting repository: https://github.com/uwi-info3180/flask-sqlite.
 I wrote a python script, "load\_csv.py", for loading csv data to the database.
 I added two columns in the table, "uploaded\_by", in order to record the type of submission 
 (by csv file or web form), and "request_timestamp", for logging requests.
